@@ -10,6 +10,7 @@ import { cn } from "@/lib/utils";
 import Image from "next/image";
 import Link from "next/link";
 import Markdown from "react-markdown";
+import { Icons } from "./icons";
 
 interface Props {
   title: string;
@@ -57,7 +58,7 @@ export function ProjectCard({
             loop
             muted
             playsInline
-            className="pointer-events-none mx-auto h-40 w-full object-cover object-top" // needed because random black line at bottom of video
+            className="pointer-events-none mx-auto h-40 w-full object-cover object-top"
           />
         )}
         {image && (
@@ -100,16 +101,20 @@ export function ProjectCard({
       <CardFooter className="px-2 pb-2">
         {links && links.length > 0 && (
           <div className="flex flex-row flex-wrap items-start gap-1">
-            {links?.map((link, idx) => (
-              <Link href={link?.href} key={idx} target="_blank">
-                <Badge key={idx} className="flex gap-2 px-2 py-1 text-[10px]">
-                  {link.icon}
-                  {link.type}
-                </Badge>
-              </Link>
-            ))}
+            {links.map((linkItem, idx) => {
+              const IconComponent = Icons[linkItem.icon as keyof typeof Icons];
+              return (
+                <Link key={idx} href={linkItem.href || "#"} target="_blank">
+                  <Badge className="flex gap-2 px-2 py-1 text-[10px]">
+                    {IconComponent && <IconComponent className="size-3" />}
+                    {linkItem.type}
+                  </Badge>
+                </Link>
+              );
+            })}
           </div>
         )}
+
       </CardFooter>
     </Card>
   );

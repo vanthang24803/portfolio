@@ -29,7 +29,7 @@ export function LanguageToggle() {
       aria-label="Toggle language"
     >
       <span className="text-xs font-semibold tracking-wide">
-        {isJa ? "EN" : "JA"}
+        {isJa ? "EN" : "日本"}
       </span>
     </Button>
   );

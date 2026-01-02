@@ -14,32 +14,7 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
-
-interface ResumeCardProps {
-  logoUrl: string;
-  altText: string;
-  title: string;
-  subtitle?: string;
-  href?: string;
-  period: string;
-  project?: ProjectProps[];
-}
-
-interface ClientProps {
-  name: string;
-  href: string;
-  img: string;
-}
-
-interface ProjectProps {
-  name: string;
-  client: ClientProps[];
-  badges: string[];
-  location: string;
-  start: string;
-  end?: string;
-  description: string[];
-}
+import { ResumeCardProps } from "@/types";
 
 export const ResumeCard = ({
   logoUrl,
@@ -48,6 +23,7 @@ export const ResumeCard = ({
   subtitle,
   href,
   period,
+  status,
   project,
 }: ResumeCardProps) => {
   const [isExpanded, setIsExpanded] = React.useState(true);

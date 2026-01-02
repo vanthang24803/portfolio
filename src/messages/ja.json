@@ -12,7 +12,14 @@
             "education": "学歴",
             "skills": "スキル",
             "projects": "サイドプロジェクトを見る",
-            "projectsDescription": "簡単なウェブサイトから複雑なウェブアプリケーションまで、さまざまなプロジェクトに取り組んできました。いくつかのお気に入りをご紹介します。"
+            "projectsDescription": "簡単なウェブサイトから複雑なウェブアプリケーションまで、さまざまなプロジェクトに取り組んできました。いくつかのお気に入りをご紹介します。",
+            "contact": "お問い合わせ",
+            "wantToChat": "ご連絡をご希望の場合は、こちらからお知らせください",
+            "linkText": "Gmailのダイレクトメッセージで",
+            "ignoreSoliciting": "できるだけ早く返信いたします。無断の営業・勧誘メッセージには対応いたしかねます。",
+            "downloadCV": "こちらから私の履歴書をダウンロードできます",
+            "downloadCVDescription": "追加の情報が必要な場合は、どうぞ私の履歴書をご参照ください。",
+            "certification": "資格"
       },
       "Actions": {
             "Email": "メール",
@@ -22,7 +29,10 @@
             "Home": "ホーム",
             "Download CV": "履歴書をダウンロード",
             "Contact": "お問い合わせ",
-            "Notification": "通知"
+            "Notification": "通知",
+            "Theme": "テーマ",
+            "Gmail": "Gmail",
+            "Language": "言語"
       },
       "Notification": {
             "Success": "成功",
