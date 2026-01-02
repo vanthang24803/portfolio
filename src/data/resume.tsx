@@ -143,10 +143,10 @@ export const DATA = {
           start: "Nov 2023",
           end: "Mar 2024",
           description: [
-            "Architected a CRM reporting service with Redis caching, reducing database load by 30%.",
-            "Automated scheduled reports via Kafka, enabling flexible weekly/monthly customizations.",
-            "Led migration from AWS S3 to Minio, cutting storage costs by 20% without compromising reliability.",
-            "Partnered with the frontend team to integrate Angular components, ensuring seamless UX."
+            "Developed HRM features for project tracking, attendance, and leave management, serving 500+ users.",
+            "Optimized SQL queries, improving report generation speed by 25%.",
+            "Migrated AWS S3 services to Minio, maintaining 100% uptime during transition.",
+            "Wrote robust unit tests using NUnit, Moq, and Testcontainers, achieving 90% code coverage."
           ]
         }],
       logoUrl: "/ncc.jpeg",
@@ -368,10 +368,10 @@ export const DATA_JP = {
           start: "2023年11月",
           end: "2024年3月",
           description: [
-            "Redisキャッシュを使用したCRMレポートサービスを設計し、データベース負荷を30%削減しました。",
-            "Kafkaを使用してスケジュールレポートを自動化し、週次/月次の柔軟なカスタマイズを可能にしました。",
-            "AWS S3からMinioへの移行を主導し、信頼性を損なうことなくストレージコストを20%削減しました。",
-            "フロントエンドチームと協力してAngularコンポーネントを統合し、シームレスなUXを実現しました。"
+            "プロジェクト追跡、出勤管理、休暇管理のためのHRM機能を開発し、500人以上のユーザーに提供しました。",
+            "SQLクエリを最適化し、レポート生成速度を25％向上させました。",
+            "AWS S3サービスをMinioに移行し、移行中も100％の稼働率を維持しました。",
+            "NUnit、Moq、Testcontainersを使用して堅牢なユニットテストを作成し、コードカバレッジ90％を達成しました。"
           ]
         }],
       logoUrl: "/ncc.jpeg",
