@@ -1,35 +1,21 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { usePathname, useRouter } from "next/navigation";
+import { useClientLocale } from "@/components/locale-provider";
 
 export function LanguageToggle() {
-  const pathname = usePathname();
-  const router = useRouter();
-  const isJa = pathname.startsWith("/ja");
-
-  const toggleLanguage = () => {
-    let newPathname;
-    if (isJa) {
-      newPathname = pathname.replace(/^\/ja/, "") || "/en";
-    } else {
-      newPathname = pathname.replace(/^\/en/, "");
-      newPathname = `/ja${newPathname}`;
-    }
-
-    router.push(newPathname);
-  };
+  const { locale, setLocale } = useClientLocale();
 
   return (
     <Button
       variant="ghost"
       size="icon"
       className="px-2"
-      onClick={toggleLanguage}
+      onClick={() => setLocale(locale === "ja" ? "en" : "ja")}
       aria-label="Toggle language"
     >
       <span className="text-xs font-semibold tracking-wide">
-        {isJa ? "EN" : "日本"}
+        {locale === "ja" ? "EN" : "日本"}
       </span>
     </Button>
   );

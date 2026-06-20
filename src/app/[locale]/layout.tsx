@@ -3,15 +3,16 @@ import { ThemeProvider } from "@/components/theme-provider";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { cn } from "@/lib/utils";
 import type { Metadata } from "next";
-import { Inter as FontSans } from "next/font/google";
+import { Inter } from "next/font/google";
 import "./globals.css";
-import { NextIntlClientProvider } from "next-intl";
 import { getTranslations } from "next-intl/server";
 import { Toaster } from "@/components/ui/toaster";
+import { ClientLocaleProvider } from "@/components/locale-provider";
 
-const fontSans = FontSans({
+const inter = Inter({
   subsets: ["latin"],
   variable: "--font-sans",
+  display: "swap",
 });
 
 export async function generateMetadata({
@@ -59,26 +60,27 @@ export default async function RootLayout({
   params: Promise<{ locale: string }>;
 }>) {
   const { locale } = await params;
-  const messages = (await import(`@/messages/${locale}.json`)).default;
 
   return (
     <html lang={locale} suppressHydrationWarning>
       <body
         className={cn(
-          "min-h-screen bg-background font-sans antialiased max-w-2xl mx-auto py-12 sm:py-24 px-6",
-          fontSans.variable
+          "bg-background font-sans antialiased",
+          inter.variable
         )}
       >
-        <NextIntlClientProvider locale={locale} messages={messages}>
-          <ThemeProvider attribute="class" defaultTheme="light">
-            <TooltipProvider delayDuration={0}>
-              {children}
-              <Navbar />
-              <Toaster />
-            </TooltipProvider>
-          </ThemeProvider>
-        </NextIntlClientProvider>
+        <div className="max-w-3xl mx-auto min-h-screen py-12 sm:py-20 px-6">
+          <ClientLocaleProvider initialLocale={locale}>
+            <ThemeProvider attribute="class" defaultTheme="light" enableSystem={false}>
+              <TooltipProvider delayDuration={0}>
+                {children}
+                <Navbar />
+                <Toaster />
+              </TooltipProvider>
+            </ThemeProvider>
+          </ClientLocaleProvider>
+        </div>
       </body>
-    </html >
+    </html>
   );
 }

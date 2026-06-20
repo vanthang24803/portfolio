@@ -1,19 +1,28 @@
 {
       "Home": {
             "title": "Hi, I'm ",
-            "name": "Thắng",
+            "name": "May",
             "fullName": "Thang Nguyen Van",
             "description": "Software Engineer passionate about exploring new technologies and building products for a global audience.",
-            "summary": "Over the past **2+ years**, I’ve worked as a **Backend Engineer**, building and maintaining **e-wallet and payment systems** with **Node.js, C#, and microservices**, focusing on scalability, reliability, and clean backend design."
+            "summary": "**Fullstack Engineer** with **3+ years** in fintech, building **e-wallet and digital banking systems** with **Node.js, Golang, and microservices**, including core banking integrations **(T24 Temenos, NAPAS)** for clients across **Vietnam, Asia, and Australia**."
       },
       "Section": {
             "about": "About",
             "work": "Work Experience",
             "education": "Education",
             "skills": "Skills",
+            "viewAll": "View all",
             "projects": "Check out my side projects",
             "projectsDescription": "I've worked on a variety of projects, from simple websites to complex web applications. Here are a few of my favorites.",
             "contact": "Get in Touch",
+            "contactSubtitle": "Have a project in mind or just want to say hi? Fill out the form and I’ll get back to you as soon as possible.",
+            "yourName": "Your name",
+            "yourEmail": "Your email",
+            "yourMessage": "Message",
+            "namePlaceholder": "John Doe",
+            "emailPlaceholder": "john@example.com",
+            "messagePlaceholder": "Hello, I’d like to...",
+            "sendMessage": "Send Message",
             "wantToChat": "If you’d like to get in touch, please reach out",
             "linkText": "via a direct message on Gmail",
             "ignoreSoliciting": "and I’ll respond as soon as possible. Please note that unsolicited messages will not be addressed.",

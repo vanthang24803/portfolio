@@ -20,7 +20,7 @@ const config = {
     },
     extend: {
       fontFamily: {
-        sans: ["var(--font-sans)", ...defaultTheme.fontFamily.sans],
+        sans: ["Inter", "var(--font-sans)", ...defaultTheme.fontFamily.sans],
       },
       colors: {
         border: "hsl(var(--border))",
@@ -31,6 +31,7 @@ const config = {
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
+          active: "hsl(var(--primary-active))",
         },
         secondary: {
           DEFAULT: "hsl(var(--secondary))",
@@ -56,11 +57,43 @@ const config = {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        /* Notion ink scale — CSS-variable driven for dark mode */
+        ink: {
+          DEFAULT: "hsl(var(--ink))",
+          secondary: "hsl(var(--ink-secondary))",
+          muted: "hsl(var(--ink-muted))",
+          faint: "hsl(var(--ink-faint))",
+        },
+        /* Notion accent sticker palette — decorative only (static) */
+        "accent-sky": "#62aef0",
+        "accent-purple": "#d6b6f6",
+        "accent-pink": "#ff64c8",
+        "accent-orange": "#dd5b00",
+        "accent-teal": "#2a9d99",
+        "accent-green": "#1aae39",
+        hairline: "hsl(var(--hairline))",
+        canvas: {
+          DEFAULT: "hsl(var(--canvas))",
+          soft: "hsl(var(--canvas-soft))",
+        },
       },
       borderRadius: {
-        lg: "var(--radius)",
-        md: "calc(var(--radius) - 2px)",
-        sm: "calc(var(--radius) - 4px)",
+        xs: "4px",
+        sm: "5px",
+        md: "8px",
+        lg: "12px",
+        xl: "16px",
+        full: "9999px",
+        DEFAULT: "12px",
+      },
+      letterSpacing: {
+        "display-1": "-0.033em",
+        "display-2": "-0.035em",
+        "heading-1": "-0.025em",
+        "heading-2": "-0.024em",
+        "heading-3": "-0.011em",
+        title: "-0.006em",
+        eyebrow: "0.01em",
       },
       keyframes: {
         "accordion-down": {

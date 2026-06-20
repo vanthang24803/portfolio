@@ -10,22 +10,24 @@ export const DATA = {
   description:
     "Software Engineer passionate about exploring new technologies and building products for a global audience.",
   summary:
-    "Over the past **2+ years**, I’ve worked as a **Backend Engineer**, building and maintaining **e-wallet and payment systems** with **Node.js, C#, and microservices**, focusing on scalability, reliability, and clean backend design.",
+    "**Fullstack Engineer** with **3+ years** in fintech, building **e-wallet and digital banking systems** with **Node.js, Golang, and microservices**, including core banking integrations **(T24 Temenos, NAPAS)** for clients across **Vietnam, Asia, and Australia**.",
 
   avatarUrl: "/me.jpeg",
   skills: [
-    "React",
-    "Next.js",
-    "Typescript",
+    "JavaScript",
+    "TypeScript",
+    "Golang",
     "Node.js",
-    "Postgres",
-    "Mongo Database",
+    "NestJS",
+    "Next.js",
+    "Sails.js",
+    "ASP.NET",
+    "PostgreSQL",
+    "MongoDB",
+    "Kafka",
+    "Redis",
     "Docker",
-    "Java",
-    "C#",
-    "ASP .NET Core",
     "Microservices",
-    "AWS"
   ],
   navbar: [
     { href: "/en", icon: HomeIcon, label: "Home" },
@@ -67,89 +69,123 @@ export const DATA = {
   work: [
     {
       company: "JITS Innovation Labs",
-      title: "Software Engineer",
+      title: "Mid-level Full-stack Developer",
       href: "https://jitsinnovationlabs.com/",
       project: [
         {
-          name: "Digital Banking",
+          name: "Digital Wallet Core",
           client: [{
             name: "TMDS",
             href: "https://www.thaicreditfoundation.org/en",
-            img: "/tmds.svg"
+            img: "/cowork/tmds.svg"
           }, {
             name: "Momoney",
             href: "https://www.mo.com.mm/momoney/",
-            img: "/momoney.svg"
-          }],
-          badges: ["Node.js", "Sails.js", "MongoDB", "React", "Angular"],
-          location: "Thailand, Myanmar Bank",
+            img: "/cowork/momoney.svg"
+          },],
+          badges: ["Sails.js", "MongoDB", "Next.js", "Golang", "NestJS"],
+          location: "Thailand, Myanmar",
           start: "Jan 2025",
           end: "Present",
           description: [
-            "Led a zero-downtime migration from MongoDB 6 to MongoDB 8 for a production financial system.",
-            "Developed core banking features including interbank transfers, bill payments, reconciliation, and online merchant regulatory reporting.",
-            "Designed and optimized secure, high-availability backend services for financial transactions.",
-            "Built and maintained scalable backend services and React applications serving 50,000+ monthly users, delivering features 15% ahead of schedule.",
-            "Implemented unit testing with Mocha and Chai, achieving 90%+ code coverage to ensure system reliability and maintainability."
+            "Built and maintained scalable backend and frontend services serving 50,000+ monthly users, delivering features 15% ahead of schedule.",
+            "Led zero-downtime migration from MongoDB 6 to 8 for a production financial system.",
+            "Migrated core transaction logic to Golang, achieving a 45% increase in concurrent transaction performance.",
+            "Developed core banking features: interbank transfers, regulatory reports, reconciliation, and bill payments.",
+            "Participated in frontend migration from AngularJS to Next.js, utilizing AI-assisted tools to improve development efficiency.",
+            "Implemented unit testing with Mocha & Chai, achieving 80%+ code coverage."
           ]
-        }, {
-          name: "V-Smart Pay",
+        },
+        {
+          name: "BNF Digital Banking",
           client: [{
-            name: "VinSmart",
-            img: "/vsmart.webp",
-            href: "https://itviec.com/companies/vinsmart-future"
+            name: "BNF",
+            href: "https://bnf.tl/",
+            img: "/cowork/bnf.png"
           }],
-          badges: ["Node.js", "MongoDB", "Microservices", "React"],
-          location: "VinGroup",
-          start: "Nov 2025",
+          badges: ["Sails.js", "MongoDB", "Microservices", "Kafka", "Next.js"],
+          location: "Timosleste",
+          start: "Jan 2026",
           end: "Present",
           description: [
-            "Developed bill payment features, integrating multiple service providers and payment workflows.",
-            "Developed core banking features: SBV regulatory reports, reconciliation, and bill payments.",
-            "Built and maintained microservices-based backend systems, conducting load testing and performance optimization to support high-volume payment processing"
+            "Led a small team of developers (5 members), mentoring junior/fresher engineers to improve code quality, problem-solving skills, and development best practices.",
+            "Integrated interbank transfer flows via NAPAS, handling transaction routing, status tracking, and reconciliation with T24 Core Banking System.",
+            "Developed and integrated real-time transaction processing with T24 Temenos Core Banking System.",
+            "Built event-driven transaction pipelines using Kafka to handle asynchronous processing of banking events with guaranteed delivery and idempotency."
           ]
-        }],
-      logoUrl: "/jt.webp",
+        },
+        {
+          name: "VSF VPAY E-wallet",
+          client: [{
+            name: "VinSmart",
+            img: "/cowork/vsmart.webp",
+            href: "https://itviec.com/companies/vinsmart-future"
+          }],
+          badges: ["Sails.js", "MongoDB", "Microservices"],
+          location: "VinGroup -  VietNam",
+          start: "Aug 2025",
+          end: "Present",
+          description: [
+            "Integrated cash-in/cash-out flows with Techcombank and NAPAS, handling bank transfer reconciliation and real-time balance synchronization.",
+            "Developed bill payment features and integrated multiple third-party service providers (electricity, water, telecom) with idempotent transaction handling and failure recovery.",
+            "Developed transaction history and statement features with advanced filtering, pagination, and date-range queries for high-volume e-wallet data.",
+            "Optimized State Bank regulatory reporting using MongoDB Aggregation Pipeline, reducing report generation time for large-scale transaction datasets.",
+            "Extended core e-wallet platform with Vietnam-specific features and compliance with State Bank of Vietnam regulations."
+          ]
+        },
+        {
+          name: "Fintech AI Context Engine",
+          client: [{
+            name: "SCB Bank",
+            img: "/cowork/scb.svg",
+            href: "https://www.scb.co.th/en/personal-banking"
+          }, {
+            name: "McKinsey",
+            img: "/cowork/mck.ico",
+            href: "https://www.mckinsey.com/"
+          }],
+          badges: ["NestJS", "Kafka", "PostgreSQL", "Temporal", "Grafana"],
+          location: "Thailand",
+          start: "Apr 2026",
+          end: "Jul 2026",
+          description: [
+            "Built an AI context engine for an electronic transaction platform to provide contextual data processing and orchestration for AI services.",
+            "Implemented Kafka-based CDC streaming between core banking systems and the AI contextual engine.",
+            "Managed workflow orchestration and distributed state handling using Temporal, and integrated AI caller SDKs for service communication.",
+            "Monitored system metrics, observability, and performance dashboards using Grafana and Prometheus."
+          ]
+        }
+      ],
+      logoUrl: "/company/jt.webp",
       start: "Jan 2025",
       end: "Present",
     },
     {
-      company: "NCC Software",
-      title: "Backend Engineer",
+      company: "NCC ASIA",
+      title: "Backend Developer",
       href: "https://ncc.plus/index.html",
       project: [
         {
-          name: "Trudi",
+          name: "TRUDI",
           client: [{
             name: "Trudi",
             href: "https://www.trudi.ai/",
-            img: "/trudi.webp"
+            img: "/cowork/trudi.webp"
           }],
-          badges: ["Express.js,", "PostgreSQL", "Kafka", "Redis", "AWS/Minio", "Docker"],
-          location: "Autrilia",
+          badges: ["ASP.NET 8", "PostgreSQL", "Kafka", "Redis", "Angular", "Express.js"],
+          location: "Australia",
           start: "Mar 2024",
           end: "Dec 2024",
           description: [
-            "Architected a CRM reporting service with Redis caching, reducing database load by 30%.",
-            "Automated scheduled reports via Kafka, enabling flexible weekly/monthly customizations.",
-            "Led migration from AWS S3 to Minio, cutting storage costs by 20% without compromising reliability.",
-            "Partnered with the frontend team to integrate Angular components, ensuring seamless UX."
+            "Architected CRM reporting service with Redis caching, reducing database load by 30%.",
+            "Led migration from AWS S3 to Minio, cutting storage costs by 20%.",
+            "Optimized PostgreSQL performance through query tuning, indexing strategies, and table partitioning, improving reporting query speed for large datasets.",
+            "Designed Kafka-based data pipeline to synchronize and process system data across services, reducing data processing latency.",
+            "Integrated third-party VoIP service into a Node.js backend to manage and track inbound/outbound calls between sales agents and customers within the CRM workflow."
           ]
-        }, {
-          name: "Timesheet",
-          client: [],
-          badges: ["C#", "ASP .NET Core", "PostgreSQL", "Angular", "AWS/Minio", "Docker"],
-          location: "Internal",
-          start: "Nov 2023",
-          end: "Mar 2024",
-          description: [
-            "Developed HRM features for project tracking, attendance, and leave management, serving 500+ users.",
-            "Optimized SQL queries, improving report generation speed by 25%.",
-            "Migrated AWS S3 services to Minio, maintaining 100% uptime during transition.",
-            "Wrote robust unit tests using NUnit, Moq, and Testcontainers, achieving 90% code coverage."
-          ]
-        }],
-      logoUrl: "/ncc.jpeg",
+        }
+      ],
+      logoUrl: "/company/ncc.jpeg",
       start: "Nov 2023",
       end: "Dec 2024",
     },
@@ -159,9 +195,9 @@ export const DATA = {
       school: "Hanoi University of Mining and Geology",
       href: "https://humg.edu.vn/Pages/home.aspx",
       degree: "Software Engineering",
-      logoUrl: "/humg.jpg",
+      logoUrl: "/school/humg.jpg",
       start: "Sep 2021",
-      end: "Aug 2025",
+      end: "July 2025",
       project: [
         {
           name: "Scientific research",
@@ -211,13 +247,22 @@ export const DATA = {
   ],
   certification: [
     {
-      school: "Toeic IIG - 550",
+      school: "Toeic IIG - 575",
       href: "https://iigvietnam.com/vi/",
       degree: "Reading, Listening",
-      logoUrl: "/iig.png",
-      start: "Tue 2023",
+      logoUrl: "/certificate/iig.png",
+      start: "Feb 2023",
+      status: "inactive",
+      end: "Feb 2025",
+    },
+    {
+      school: "JLPT N4",
+      href: "https://www.jlpt.jp/e/",
+      degree: "Reading, Listening",
+      logoUrl: "/certificate/jlpt.jpg",
+      start: "July 2026",
       status: "active",
-      end: "Tue 2025",
+      end: "Present",
     }
   ],
 
@@ -232,22 +277,24 @@ export const DATA_JP = {
   description:
     "新しい技術を探求し、グローバルなユーザー向けに製品を構築することに情熱を持つソフトウェアエンジニアです。",
   summary:
-    "過去**2年以上**にわたり、**バックエンドエンジニア**として、**Node.js、C#、マイクロサービス**を使用した**電子ウォレットおよび決済システム**の構築と保守に従事してきました。スケーラビリティ、信頼性、クリーンなバックエンド設計に注力しています。",
+    "**フルスタックエンジニア**として**3年以上**のフィンテック経験を持ち、**Node.js、Golang、マイクロサービス**を用いた**電子ウォレット・デジタルバンキングシステム**の構築に携わってきました。**T24 Temenos・NAPAS**等のコアバンキング統合を含む、**ベトナム、タイ、オーストラリア**のクライアント向けシステム開発の実績があります。",
 
   avatarUrl: "/me.jpeg",
   skills: [
-    "React",
-    "Next.js",
-    "Typescript",
+    "JavaScript",
+    "TypeScript",
+    "Golang",
     "Node.js",
-    "Postgres",
-    "Mongo Database",
+    "NestJS",
+    "Next.js",
+    "Sails.js",
+    "ASP.NET",
+    "PostgreSQL",
+    "MongoDB",
+    "Kafka",
+    "Redis",
     "Docker",
-    "Java",
-    "C#",
-    "ASP .NET Core",
     "Microservices",
-    "AWS"
   ],
   navbar: [
     { href: "/en", icon: HomeIcon, label: "ホーム" },
@@ -292,89 +339,123 @@ export const DATA_JP = {
   work: [
     {
       company: "JITS Innovation Labs",
-      title: "ソフトウェアエンジニア",
+      title: "ミドルレベル・フルスタックデベロッパー",
       href: "https://jitsinnovationlabs.com/",
       project: [
         {
-          name: "デジタルバンキング",
+          name: "デジタルウォレットコア",
           client: [{
             name: "TMDS",
             href: "https://www.thaicreditfoundation.org/en",
-            img: "/tmds.svg"
+            img: "/cowork/tmds.svg"
           }, {
             name: "Momoney",
             href: "https://www.mo.com.mm/momoney/",
-            img: "/momoney.svg"
+            img: "/cowork/momoney.svg"
           }],
-          badges: ["Node.js", "Sails.js", "MongoDB", "React", "Angular"],
-          location: "タイ、ミャンマー銀行",
+          badges: ["Sails.js", "MongoDB", "Next.js", "Golang", "NestJS"],
+          location: "タイ、ミャンマー",
           start: "2025年1月",
           end: "現在",
           description: [
-            "本番の金融システムでMongoDB 6からMongoDB 8へのゼロダウンタイム移行を主導しました。",
-            "銀行間送金、請求書支払い、照合、オンライン加盟店規制レポートなどのコアバンキング機能を開発しました。",
-            "金融取引向けの安全で高可用性なバックエンドサービスを設計・最適化しました。",
-            "月間50,000以上のユーザーに提供するスケーラブルなバックエンドサービスとReactアプリケーションを構築・保守し、機能を予定より15%早く提供しました。",
-            "MochaとChaiを使用した単体テストを実装し、コードカバレッジ90%以上を達成してシステムの信頼性と保守性を確保しました。"
+            "月間50,000人以上のユーザーにサービスを提供するスケーラブルなバックエンド・フロントエンドを構築・保守し、機能を予定より15%早く提供しました。",
+            "本番の金融システムでMongoDB 6から8へのゼロダウンタイム移行を主導しました。",
+            "コアトランザクションロジックをGolangに移行し、同時トランザクション処理性能を45%向上させました。",
+            "銀行間送金、規制レポート、照合、請求書支払いなどのコアバンキング機能を開発しました。",
+            "AngularJSからNext.jsへのフロントエンド移行に参加し、AIツールを活用して開発効率を向上させました。",
+            "MochaとChaiを使用した単体テストを実装し、コードカバレッジ80%以上を達成しました。"
           ]
-        }, {
-          name: "V-Smart Pay",
+        },
+        {
+          name: "BNFデジタルバンキング",
           client: [{
-            name: "VinSmart",
-            img: "/vsmart.webp",
-            href: "https://itviec.com/companies/vinsmart-future"
+            name: "BNF",
+            href: "https://bnf.tl/",
+            img: "/cowork/bnf.png"
           }],
-          badges: ["Node.js", "MongoDB", "マイクロサービス", "React"],
-          location: "VinGroup",
-          start: "2025年11月",
+          badges: ["Sails.js", "MongoDB", "マイクロサービス", "Kafka", "Next.js"],
+          location: "東ティモール",
+          start: "2026年1月",
           end: "現在",
           description: [
-            "複数のサービスプロバイダーと決済ワークフローを統合した請求書支払い機能を開発しました。",
-            "コアバンキング機能（SBV規制レポート、照合、請求書支払い）を開発しました。",
-            "マイクロサービスベースのバックエンドシステムを構築・保守し、高負荷決済処理をサポートするためのロードテストとパフォーマンス最適化を実施しました。"
+            "開発者チーム（5名）をリードし、ジュニアエンジニアにコード品質・問題解決・開発ベストプラクティスを指導しました。",
+            "NAPASを介した銀行間送金フローを統合し、T24コアバンキングシステムとのトランザクションルーティング・照合を実装しました。",
+            "T24 Temenosコアバンキングシステムとのリアルタイムトランザクション処理を開発・統合しました。",
+            "Kafkaを使用したイベント駆動型トランザクションパイプラインを構築し、銀行イベントの非同期処理を保証付きで実現しました。"
           ]
-        }],
-      logoUrl: "/jt.webp",
+        },
+        {
+          name: "VSF VPAYエレクトロニックウォレット",
+          client: [{
+            name: "VinSmart",
+            img: "/cowork/vsmart.webp",
+            href: "https://itviec.com/companies/vinsmart-future"
+          }],
+          badges: ["Sails.js", "MongoDB", "マイクロサービス"],
+          location: "VinGroup",
+          start: "2025年8月",
+          end: "現在",
+          description: [
+            "TechcombankおよびNAPASとのキャッシュイン・アウトフローを統合し、リアルタイム残高同期を実現しました。",
+            "電気・水道・通信事業者等の複数サービスプロバイダーを統合した請求書支払い機能を開発しました。",
+            "高ボリュームのeウォレットデータに対して高度なフィルタリング・ページネーション・日付範囲クエリを持つ取引履歴機能を開発しました。",
+            "MongoDBアグリゲーションパイプラインを使用してSBV規制レポート・照合システムを最適化しました。",
+            "ベトナム国家銀行の規制に準拠したベトナム固有の決済機能をプラットフォームに追加しました。"
+          ]
+        },
+        {
+          name: "フィンテックAIコンテキストエンジン",
+          client: [{
+            name: "SCB Bank",
+            img: "/cowork/scb.svg",
+            href: "https://www.scb.co.th/en/personal-banking"
+          }, {
+            name: "McKinsey",
+            img: "/cowork/mck.ico",
+            href: "https://www.mckinsey.com/"
+          }],
+          badges: ["NestJS", "Kafka", "PostgreSQL", "Temporal", "Grafana"],
+          location: "タイ",
+          start: "2026年4月",
+          end: "2026年7月",
+          description: [
+            "電子取引プラットフォーム向けAIコンテキストエンジンを構築し、AIサービスのデータ処理・オーケストレーションを実現しました。",
+            "コアバンキングシステムとAIコンテキストエンジン間のKafkaベースCDCストリーミングを実装しました。",
+            "Temporalを使用したワークフローオーケストレーションと分散状態管理を担当し、AI呼び出しSDKを統合しました。",
+            "GrafanaとPrometheusを使用してシステムメトリクス・可観測性・パフォーマンスダッシュボードを監視しました。"
+          ]
+        }
+      ],
+      logoUrl: "/company/jt.webp",
       start: "2025年1月",
       end: "現在",
     },
     {
-      company: "NCC Software",
-      title: "バックエンドエンジニア",
+      company: "NCC ASIA",
+      title: "バックエンドデベロッパー",
       href: "https://ncc.plus/index.html",
       project: [
         {
-          name: "Trudi",
+          name: "TRUDI",
           client: [{
             name: "Trudi",
             href: "https://www.trudi.ai/",
-            img: "/trudi.webp"
+            img: "/cowork/trudi.webp"
           }],
-          badges: ["Express.js,", "PostgreSQL", "Kafka", "Redis", "AWS/Minio", "Docker"],
+          badges: ["ASP.NET 8", "PostgreSQL", "Kafka", "Redis", "Angular", "Express.js"],
           location: "オーストラリア",
           start: "2024年3月",
           end: "2024年12月",
           description: [
-            "Redisキャッシュを使用したCRMレポートサービスを設計し、データベース負荷を30%削減しました。",
-            "Kafkaを使用してスケジュールレポートを自動化し、週次/月次の柔軟なカスタマイズを可能にしました。",
-            "AWS S3からMinioへの移行を主導し、信頼性を損なうことなくストレージコストを20%削減しました。",
-            "フロントエンドチームと協力してAngularコンポーネントを統合し、シームレスなUXを実現しました。"
+            "Redisキャッシュを使用したCRMレポートサービスを構築し、データベース負荷を30%削減しました。",
+            "AWS S3からMinioへの移行を主導し、ストレージコストを20%削減しました。",
+            "クエリチューニング・インデックス・テーブルパーティショニングによりPostgreSQLパフォーマンスを最適化し、レポート速度を向上させました。",
+            "Kafkaベースのデータパイプラインを設計し、サービス間のデータ同期・処理レイテンシを削減しました。",
+            "Node.jsバックエンドにサードパーティVoIPサービスを統合し、CRMワークフロー内の通話管理を実現しました。"
           ]
-        }, {
-          name: "タイムシート",
-          client: [],
-          badges: ["C#", "ASP .NET Core", "PostgreSQL", "Angular", "AWS/Minio", "Docker"],
-          location: "社内",
-          start: "2023年11月",
-          end: "2024年3月",
-          description: [
-            "プロジェクト追跡、出勤管理、休暇管理のためのHRM機能を開発し、500人以上のユーザーに提供しました。",
-            "SQLクエリを最適化し、レポート生成速度を25％向上させました。",
-            "AWS S3サービスをMinioに移行し、移行中も100％の稼働率を維持しました。",
-            "NUnit、Moq、Testcontainersを使用して堅牢なユニットテストを作成し、コードカバレッジ90％を達成しました。"
-          ]
-        }],
-      logoUrl: "/ncc.jpeg",
+        }
+      ],
+      logoUrl: "/company/ncc.jpeg",
       start: "2023年11月",
       end: "2024年12月",
     },
@@ -384,9 +465,9 @@ export const DATA_JP = {
       school: "ハノイ鉱山地質大学",
       href: "https://humg.edu.vn/Pages/home.aspx",
       degree: "ソフトウェア工学",
-      logoUrl: "/humg.jpg",
+      logoUrl: "/school/humg.jpg",
       start: "2021年9月",
-      end: "2025年8月",
+      end: "2025年7月",
       project: [
         {
           name: "科学研究",
@@ -435,13 +516,22 @@ export const DATA_JP = {
   ],
   certification: [
     {
-      school: "Toeic IIG - 550",
+      school: "TOEIC Listening & Reading Test 575点",
       href: "https://iigvietnam.com/vi/",
       degree: "リーディング、リスニング",
-      logoUrl: "/iig.png",
+      logoUrl: "/certificate/iig.png",
       start: "2023年2月",
-      status: "有効",
+      status: "失効",
       end: "2025年2月",
+    },
+    {
+      school: "日本語能力試験（JLPT）N4 合格",
+      href: "https://www.jlpt.jp/e/",
+      degree: "リーディング、リスニング",
+      logoUrl: "/certificate/jlpt.jpg",
+      start: "2026年7月",
+      status: "有効",
+      end: "現在",
     }
   ],
 

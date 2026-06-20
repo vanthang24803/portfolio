@@ -15,6 +15,7 @@ import Link from "next/link";
 import { LanguageToggle } from "@/components/language-toggle";
 import { useTranslations } from "next-intl";
 import { DownloadCV } from "@/components/download-cv";
+import { SettingsPanel } from "@/components/settings-panel";
 
 export default function Navbar() {
   const t = useTranslations("Actions");
@@ -99,6 +100,10 @@ export default function Navbar() {
               <p>{t("Download CV")}</p>
             </TooltipContent>
           </Tooltip>
+        </DockIcon>
+
+        <DockIcon>
+          <SettingsPanel />
         </DockIcon>
       </Dock>
     </div>

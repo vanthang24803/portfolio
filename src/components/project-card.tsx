@@ -1,4 +1,3 @@
-import { Badge } from "@/components/ui/badge";
 import {
   Card,
   CardContent,
@@ -42,11 +41,7 @@ export function ProjectCard({
   className,
 }: Props) {
   return (
-    <Card
-      className={
-        "flex flex-col overflow-hidden border hover:shadow-lg transition-all duration-300 ease-out h-full"
-      }
-    >
+    <Card className="flex flex-col overflow-hidden border border-hairline bg-card hover:shadow-[0_0_0_1px_#e6e6e6,0_2px_8px_rgba(0,0,0,0.06)] transition-all duration-200 h-full shadow-none rounded-xl">
       <Link
         href={href || "#"}
         className={cn("block cursor-pointer", className)}
@@ -71,50 +66,50 @@ export function ProjectCard({
           />
         )}
       </Link>
-      <CardHeader className="px-2">
-        <div className="space-y-1">
-          <CardTitle className="mt-1 text-base">{title}</CardTitle>
-          <time className="font-sans text-xs">{dates}</time>
-          <div className="hidden font-sans text-xs underline print:visible">
+      <CardHeader className="px-4 pt-4 pb-2">
+        <div className="space-y-1.5">
+          <CardTitle className="mt-1 text-[15px] font-semibold text-foreground leading-snug tracking-[-0.006em]">
+            {title}
+          </CardTitle>
+          <time className="text-[12px] font-semibold tracking-[0.01em] text-ink-faint">{dates}</time>
+          <div className="hidden text-[12px] underline print:visible text-ink-muted">
             {link?.replace("https://", "").replace("www.", "").replace("/", "")}
           </div>
-          <div className="prose max-w-full text-pretty font-sans text-xs text-muted-foreground dark:prose-invert">
+          <div className="text-[14px] text-ink-muted leading-[1.43] line-clamp-3">
             <Markdown>{description}</Markdown>
           </div>
         </div>
       </CardHeader>
-      <CardContent className="mt-auto flex flex-col px-2">
+      <CardContent className="mt-auto flex flex-col px-4 pb-2">
         {tags && tags.length > 0 && (
-          <div className="mt-2 flex flex-wrap gap-1">
-            {tags?.map((tag) => (
-              <Badge
-                className="px-1 py-0 text-[10px]"
-                variant="secondary"
+          <div className="mt-2 flex flex-wrap gap-1.5">
+            {tags.map((tag) => (
+              <span
                 key={tag}
+                className="inline-flex items-center rounded-full bg-canvas-soft border border-hairline px-2 py-0.5 text-[11px] font-semibold tracking-[0.01em] text-primary"
               >
                 {tag}
-              </Badge>
+              </span>
             ))}
           </div>
         )}
       </CardContent>
-      <CardFooter className="px-2 pb-2">
+      <CardFooter className="px-4 pb-4 pt-0">
         {links && links.length > 0 && (
-          <div className="flex flex-row flex-wrap items-start gap-1">
+          <div className="flex flex-row flex-wrap items-start gap-1.5">
             {links.map((linkItem, idx) => {
               const IconComponent = Icons[linkItem.icon as keyof typeof Icons];
               return (
                 <Link key={idx} href={linkItem.href || "#"} target="_blank">
-                  <Badge className="flex gap-2 px-2 py-1 text-[10px]">
+                  <span className="inline-flex items-center gap-1.5 rounded-md bg-canvas-soft border border-hairline px-2.5 py-1 text-[11px] font-medium text-ink-secondary hover:bg-muted transition-colors">
                     {IconComponent && <IconComponent className="size-3" />}
                     {linkItem.type}
-                  </Badge>
+                  </span>
                 </Link>
               );
             })}
           </div>
         )}
-
       </CardFooter>
     </Card>
   );

@@ -18,7 +18,7 @@ export function DownloadCV() {
             const filePath =
                   locale === "ja"
                         ? "/cv/CV_NguyenVanThang_SE_ja.pdf"
-                        : "/cv/CV_NguyenVanThang_SE.pdf";
+                        : "/cv/CV_NguyenVanThang_SE_en.pdf";
 
             const link = document.createElement("a");
             link.href = filePath;

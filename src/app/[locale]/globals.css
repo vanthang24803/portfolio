@@ -3,65 +3,101 @@
 
 @layer base {
     :root {
-      --background: 0 0% 100%;
-      --foreground: 210 11.1% 3.53%;
+      /* Notion canvas */
+      --background: 30 9% 96%;
+      --foreground: 0 0% 0%;
 
+      /* Notion-specific semantic tokens */
+      --canvas: 0 0% 100%;
+      --canvas-soft: 30 9% 96%;
+      --hairline: 0 0% 90%;
+      --ink: 0 0% 0%;
+      --ink-secondary: 27 5% 18%;
+      --ink-muted: 27 5% 37%;
+      --ink-faint: 25 5% 63%;
+
+      /* Surface (white cards on warm canvas) */
       --card: 0 0% 100%;
-      --card-foreground: 210 11.1% 3.53%;
+      --card-foreground: 0 0% 0%;
 
       --popover: 0 0% 100%;
-      --popover-foreground: 210 11.1% 3.53%;
+      --popover-foreground: 0 0% 0%;
 
-      --primary: 0 0% 9%;
-      --primary-foreground: 0 0% 98%;
+      /* Notion Blue — single structural accent */
+      --primary: 208 100% 44%;
+      --primary-foreground: 0 0% 100%;
+      --primary-active: 208 100% 34%;
 
-      --secondary: 0 0% 96.1%;
-      --secondary-foreground: 0 0% 9%;
+      /* Deep Indigo hero band */
+      --secondary: 228 59% 32%;
+      --secondary-foreground: 0 0% 100%;
 
-      --muted: 0 0% 96.1%;
-      --muted-foreground: 0 0% 45.1%;
+      /* Muted / canvas-soft */
+      --muted: 30 9% 96%;
+      --muted-foreground: 27 5% 37%;
 
-      --accent: 0 0% 96.1%;
-    --accent-foreground: 0 0% 9%;
+      --accent: 30 9% 96%;
+      --accent-foreground: 0 0% 0%;
 
       --destructive: 0 84.2% 60.2%;
       --destructive-foreground: 0 0% 98%;
 
-      --border: 0 0% 89.8%;
-      --input: 0 0% 89.8%;
-      --ring: 0 0% 3.9%;
+      /* Hairline border */
+      --border: 0 0% 90%;
+      --input: 0 0% 90%;
+      --ring: 208 100% 44%;
 
-      --radius: 0.5rem;
+      /* Border radius — feature-card default */
+      --radius: 0.75rem;
     }
 
     .dark {
-      --background: 210 11.1% 3.53%;
-      --foreground: 0 0% 98%;
+      /* Near-black warm canvas — Notion night */
+      --background: 30 6% 11%;
+      --foreground: 30 9% 96%;
 
-      --card: 210 11.1% 3.53%;
-      --card-foreground: 0 0% 98%;
+      /* Notion-specific dark tokens */
+      --canvas: 30 6% 15%;
+      --canvas-soft: 30 6% 18%;
+      --hairline: 30 5% 22%;
+      --ink: 30 9% 96%;
+      --ink-secondary: 30 8% 80%;
+      --ink-muted: 25 5% 63%;
+      --ink-faint: 27 5% 45%;
 
-      --popover: 210 11.1% 3.53%;
-      --popover-foreground: 0 0% 98%;
+      /* Dark surface for cards */
+      --card: 30 6% 15%;
+      --card-foreground: 30 9% 96%;
 
-      --primary: 0 0% 98%;
-      --primary-foreground: 0 0% 9%;
+      --popover: 30 6% 15%;
+      --popover-foreground: 30 9% 96%;
 
-      --secondary: 0 0% 14.9%;
-      --secondary-foreground: 0 0% 98%;
+      /* Keep Notion blue — same primary */
+      --primary: 208 100% 50%;
+      --primary-foreground: 0 0% 100%;
+      --primary-active: 208 100% 40%;
 
-      --muted: 0 0% 14.9%;
-      --muted-foreground: 0 0% 63.9%;
+      /* Deep indigo hero — same */
+      --secondary: 228 59% 32%;
+      --secondary-foreground: 0 0% 100%;
 
-      --accent: 0 0% 14.9%;
-      --accent-foreground: 0 0% 98%;
+      /* Dark muted surface */
+      --muted: 30 6% 18%;
+      --muted-foreground: 25 5% 63%;
 
-      --destructive: 0 62.8% 30.6%;
+      --accent: 30 6% 18%;
+      --accent-foreground: 30 9% 96%;
+
+      --destructive: 0 62.8% 50%;
       --destructive-foreground: 0 0% 98%;
 
-      --border: 0 0% 14.9%;
-      --input: 0 0% 14.9%;
-      --ring: 0 0% 83.1%;
+      /* Dark hairline border — brighter so it's visible on dark cards */
+      --border: 30 5% 28%;
+      --input: 30 5% 28%;
+      --ring: 208 100% 50%;
+
+      /* Dark hairline must match border */
+      --hairline: 30 5% 28%;
     }
   }
 
@@ -69,8 +105,18 @@
     * {
       @apply border-border;
     }
+    html {
+      scrollbar-gutter: stable;
+    }
     body {
       @apply bg-background text-foreground;
+      font-family: "Inter", -apple-system, system-ui, "Segoe UI", Helvetica, Arial, sans-serif;
+      font-feature-settings: "lnum" 1, "locl" 1;
+    }
+    /* Cancel Radix's scroll-lock padding compensation — scrollbar-gutter already handles it */
+    body[data-scroll-locked] {
+      padding-right: 0 !important;
+      margin-right: 0 !important;
     }
   }
 
