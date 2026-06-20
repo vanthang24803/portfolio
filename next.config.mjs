@@ -4,7 +4,7 @@ const withNextIntl = createNextIntlPlugin("./src/i18n/request.ts");
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: "standalone",
+  ...(process.env.DOCKER_BUILD === "1" && { output: "standalone" }),
   reactStrictMode: true,
   webpack: (config) => {
     config.ignoreWarnings = [
