@@ -288,7 +288,7 @@ export default function Page() {
           </button>
         </BlurFade>
         <motion.div initial={false} animate={{ height: collapsed.work ? 0 : "auto", opacity: collapsed.work ? 0 : 1 }} transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }} className="overflow-hidden">
-          <div className="flex min-h-0 flex-col gap-y-5">
+          <div className="flex min-h-0 flex-col gap-y-5 p-px">
             {data && data.work.map((work, id) => (
               <BlurFade key={work.company} delay={BLUR_FADE_DELAY * 6 + id * 0.05}>
                 <ResumeCard
@@ -315,7 +315,7 @@ export default function Page() {
           </button>
         </BlurFade>
         <motion.div initial={false} animate={{ height: collapsed.education ? 0 : "auto", opacity: collapsed.education ? 0 : 1 }} transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }} className="overflow-hidden">
-          <div className="flex min-h-0 flex-col gap-y-4">
+          <div className="flex min-h-0 flex-col gap-y-4 p-px">
             {data && data.education.map((education, id) => (
               <BlurFade key={education.school} delay={BLUR_FADE_DELAY * 8 + id * 0.05}>
                 <ResumeCard
@@ -342,7 +342,7 @@ export default function Page() {
           </button>
         </BlurFade>
         <motion.div initial={false} animate={{ height: collapsed.certification ? 0 : "auto", opacity: collapsed.certification ? 0 : 1 }} transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }} className="overflow-hidden">
-          <div className="flex min-h-0 flex-col gap-y-4">
+          <div className="flex min-h-0 flex-col gap-y-4 p-px">
             {data && data.certification.map((certification, id) => (
               <BlurFade key={certification.school} delay={BLUR_FADE_DELAY * 8 + id * 0.05}>
                 <ResumeCard
