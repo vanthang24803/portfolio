@@ -15,6 +15,7 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip";
 import { ResumeCardProps } from "@/types";
+import { useClientLocale } from "@/components/locale-provider";
 
 function parsePeriodDate(dateStr: string): Date | null {
   const s = dateStr.trim();
@@ -37,7 +38,7 @@ function parsePeriodDate(dateStr: string): Date | null {
   return null;
 }
 
-function calculateDuration(period: string): string {
+function calculateDuration(period: string, isJa = false): string {
   const parts = period.split(" - ");
   if (parts.length !== 2) return "";
   const start = parsePeriodDate(parts[0]);
@@ -47,6 +48,9 @@ function calculateDuration(period: string): string {
   if (total <= 0) return "";
   const yrs = Math.floor(total / 12);
   const mos = total % 12;
+  if (isJa) {
+    return [yrs > 0 ? `${yrs}年` : "", mos > 0 ? `${mos}ヶ月` : ""].filter(Boolean).join("");
+  }
   return [yrs > 0 ? `${yrs} yr${yrs > 1 ? "s" : ""}` : "", mos > 0 ? `${mos} mo` : ""].filter(Boolean).join(" ");
 }
 
@@ -60,6 +64,8 @@ export const ResumeCard = ({
   status,
   project,
 }: ResumeCardProps) => {
+  const { locale } = useClientLocale();
+  const isJa = locale === "ja";
   const [isExpanded, setIsExpanded] = React.useState(true);
 
   const handleClick = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
@@ -111,9 +117,9 @@ export const ResumeCard = ({
                         {period}
                       </div>
                     </TooltipTrigger>
-                    {calculateDuration(period) && (
+                    {calculateDuration(period, isJa) && (
                       <TooltipContent side="top" collisionPadding={10} avoidCollisions>
-                        <span className="text-xs">{calculateDuration(period)}</span>
+                        <span className="text-xs">{calculateDuration(period, isJa)}</span>
                       </TooltipContent>
                     )}
                   </Tooltip>
