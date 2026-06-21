@@ -143,11 +143,11 @@ export const ResumeCard = ({
                     <span className="absolute -left-[7px] top-1.5 h-3 w-3 rounded-full bg-primary ring-2 ring-background" />
 
                     <div className="space-y-2">
-                      <div className="flex items-center justify-between gap-2">
-                        <div className="flex items-center gap-2">
-                          <h3 className="font-medium leading-snug text-xs sm:text-sm text-foreground">
-                            {item.name}
-                          </h3>
+                      <div className="flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between sm:gap-2">
+                        <h3 className="font-medium leading-snug text-xs sm:text-sm text-foreground">
+                          {item.name}
+                        </h3>
+                        <div className="flex items-center gap-2 shrink-0">
                           <TooltipProvider>
                             <div className="flex items-center">
                               {item.client.slice(0, 4).map((client, index) => (
@@ -177,19 +177,19 @@ export const ResumeCard = ({
                               ))}
                             </div>
                           </TooltipProvider>
+                          <Tooltip>
+                            <TooltipTrigger asChild>
+                              <span className="text-xs text-muted-foreground whitespace-nowrap cursor-default">
+                                {item.start} - {item.end}
+                              </span>
+                            </TooltipTrigger>
+                            {calculateDuration(`${item.start} - ${item.end}`) && (
+                              <TooltipContent side="top">
+                                <span className="text-xs">{calculateDuration(`${item.start} - ${item.end}`)}</span>
+                              </TooltipContent>
+                            )}
+                          </Tooltip>
                         </div>
-                        <Tooltip>
-                          <TooltipTrigger asChild>
-                            <span className="text-xs text-muted-foreground shrink-0 cursor-default">
-                              {item.start} - {item.end}
-                            </span>
-                          </TooltipTrigger>
-                          {calculateDuration(`${item.start} - ${item.end}`) && (
-                            <TooltipContent side="top">
-                              <span className="text-xs">{calculateDuration(`${item.start} - ${item.end}`)}</span>
-                            </TooltipContent>
-                          )}
-                        </Tooltip>
                       </div>
 
                       {item.location && (
