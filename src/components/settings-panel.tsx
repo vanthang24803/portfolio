@@ -46,7 +46,7 @@ const PRIMARY_COLORS = [
 ];
 
 const KANJI_FONTS = [
-  { id: "system", label: "OS Default", value: "system-ui, sans-serif", url: null },
+  { id: "system", label: "OS Default", labelJa: "OSデフォルト", value: "system-ui, sans-serif", url: null },
   {
     id: "zen-maru",
     label: "Zen Maru Gothic",
@@ -96,10 +96,34 @@ function Toggle({ checked, onChange }: { checked: boolean; onChange: (v: boolean
   );
 }
 
+const t = {
+  en: {
+    title: "Interface Settings",
+    language: "Language",
+    darkMode: "Dark Mode",
+    darkModeDesc: "Toggle light/dark theme",
+    primaryColor: "Primary Color",
+    fontKanji: "Font Kanji",
+    uiFont: "UI Font",
+    reset: "Reset all settings",
+  },
+  ja: {
+    title: "インターフェース設定",
+    language: "言語",
+    darkMode: "ダークモード",
+    darkModeDesc: "ライト/ダークテーマの切り替え",
+    primaryColor: "テーマカラー",
+    fontKanji: "漢字フォント",
+    uiFont: "UIフォント",
+    reset: "設定をリセット",
+  },
+};
+
 export function SettingsPanel() {
   const { theme, setTheme } = useTheme();
   const { locale, setLocale } = useClientLocale();
   const isJa = locale === "ja";
+  const i = isJa ? t.ja : t.en;
 
   const [uiFont, setUiFont] = useState("inter");
   const [kanjiFont, setKanjiFont] = useState("system");
@@ -193,13 +217,13 @@ export function SettingsPanel() {
       </DialogTrigger>
       <DialogContent className="max-w-md max-h-[86vh] overflow-y-auto">
         <DialogHeader>
-          <DialogTitle>Interface Settings</DialogTitle>
+          <DialogTitle>{i.title}</DialogTitle>
         </DialogHeader>
 
         <div className="space-y-5">
           {/* Language */}
           <section>
-            <p className="text-sm font-semibold mb-2">Language</p>
+            <p className="text-sm font-semibold mb-2">{i.language}</p>
             <div className="grid grid-cols-2 gap-2">
               {[
                 { lang: "en", flag: "🇺🇸", label: "English" },
@@ -228,8 +252,8 @@ export function SettingsPanel() {
           {/* Dark Mode */}
           <section className="flex items-center justify-between">
             <div>
-              <p className="text-sm font-semibold">Dark Mode</p>
-              <p className="text-xs text-muted-foreground">Toggle light/dark theme</p>
+              <p className="text-sm font-semibold">{i.darkMode}</p>
+              <p className="text-xs text-muted-foreground">{i.darkModeDesc}</p>
             </div>
             <Toggle
               checked={theme === "dark"}
@@ -239,7 +263,7 @@ export function SettingsPanel() {
 
           {/* Primary Color */}
           <section>
-            <p className="text-sm font-semibold mb-3">Primary Color</p>
+            <p className="text-sm font-semibold mb-3">{i.primaryColor}</p>
             <div className="flex items-center justify-between w-full">
               {PRIMARY_COLORS.map((color) => {
                 const active = primaryColor === color.id;
@@ -262,7 +286,7 @@ export function SettingsPanel() {
           {/* Kanji Font — JA only */}
           {isJa && (
             <section>
-              <p className="text-sm font-semibold mb-2">Font Kanji</p>
+              <p className="text-sm font-semibold mb-2">{i.fontKanji}</p>
               <div className="grid grid-cols-2 gap-2">
                 {KANJI_FONTS.map((font) => (
                   <button
@@ -281,7 +305,7 @@ export function SettingsPanel() {
                     >
                       漢字
                     </span>
-                    <span className="text-[11px] text-muted-foreground mt-1">{font.label}</span>
+                    <span className="text-[11px] text-muted-foreground mt-1">{isJa && "labelJa" in font ? font.labelJa : font.label}</span>
                   </button>
                 ))}
               </div>
@@ -291,7 +315,7 @@ export function SettingsPanel() {
           {/* UI Font — EN only */}
           {!isJa && (
             <section>
-              <p className="text-sm font-semibold mb-2">UI Font</p>
+              <p className="text-sm font-semibold mb-2">{i.uiFont}</p>
               <div className="grid grid-cols-2 gap-2">
                 {UI_FONTS.map((font) => (
                   <button
@@ -324,7 +348,7 @@ export function SettingsPanel() {
               className="flex items-center gap-1.5 text-sm text-muted-foreground hover:text-foreground transition-colors mx-auto"
             >
               <RotateCcw className="size-3.5" />
-              Reset all settings
+              {i.reset}
             </button>
           </div>
         </div>
