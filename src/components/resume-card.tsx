@@ -73,7 +73,7 @@ export const ResumeCard = ({
       className="block cursor-pointer"
       onClick={handleClick}
     >
-      <Card className="flex bg-card border border-hairline hover:shadow-[0_0_0_1px_#e6e6e6,0_2px_8px_rgba(0,0,0,0.06)] transition-all duration-200 p-4 gap-4">
+      <Card className="flex bg-card border border-hairline hover:shadow-[0_0_0_1px_#e6e6e6,0_2px_8px_rgba(0,0,0,0.06)] dark:hover:shadow-[0_0_0_1px_rgba(255,255,255,0.15),0_2px_8px_rgba(0,0,0,0.4)] transition-all duration-200 p-4 gap-4">
         <Link href={href || "#"} className="flex-none" onClick={(e) => e.stopPropagation()}>
           <Avatar className="border border-hairline size-12 bg-canvas-soft">
             <AvatarImage
