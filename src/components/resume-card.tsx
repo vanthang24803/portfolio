@@ -86,7 +86,7 @@ export const ResumeCard = ({
         </Link>
         <div className="flex-grow items-center flex-col group min-w-0">
           <CardHeader className="p-0">
-            <div className="flex items-center justify-between gap-x-2 text-base">
+            <div className="flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between sm:gap-x-2 text-base">
               <h3 className="inline-flex items-center font-medium leading-snug text-sm text-foreground">
                 {title}
                 {project && (
