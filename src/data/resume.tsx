@@ -4,7 +4,7 @@ import { HomeIcon } from "lucide-react";
 export const DATA = {
   name: "Thắng Nguyễn Văn",
   initials: "May",
-  url: "http://localhost:3000",
+  url: "https://cv.thangnguyen.io.vn",
   location: "Ha noi, VN",
   locationLink: "https://www.google.com/maps/place/hanoi",
   description:
@@ -271,7 +271,7 @@ export const DATA = {
 export const DATA_JP = {
   name: "Thắng Nguyễn Văn",
   initials: "May",
-  url: "http://localhost:3000",
+  url: "https://cv.thangnguyen.io.vn",
   location: "ハノイ, ベトナム",
   locationLink: "https://www.google.com/maps/place/hanoi",
   description:

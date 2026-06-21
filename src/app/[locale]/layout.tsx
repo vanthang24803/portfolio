@@ -15,6 +15,8 @@ const inter = Inter({
   display: "swap",
 });
 
+const BASE_URL = "https://cv.thangnguyen.io.vn";
+
 export async function generateMetadata({
   params,
 }: {
@@ -23,20 +25,45 @@ export async function generateMetadata({
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "Metadata" });
 
-
-
   return {
+    metadataBase: new URL(BASE_URL),
     title: {
       default: t("title"),
       template: `%s | ${t("title")}`,
     },
     description: t("description"),
+    keywords: t("keywords"),
+    authors: [{ name: "Thang Nguyen Van", url: BASE_URL }],
+    creator: "Thang Nguyen Van",
+    alternates: {
+      canonical: `${BASE_URL}/${locale}`,
+      languages: {
+        "en-US": `${BASE_URL}/en`,
+        "ja-JP": `${BASE_URL}/ja`,
+      },
+    },
     openGraph: {
       title: t("title"),
       description: t("description"),
+      url: `${BASE_URL}/${locale}`,
       siteName: t("title"),
       locale: locale === "ja" ? "ja_JP" : "en_US",
+      alternateLocale: locale === "ja" ? "en_US" : "ja_JP",
       type: "website",
+      images: [
+        {
+          url: "/me.jpeg",
+          width: 800,
+          height: 800,
+          alt: t("title"),
+        },
+      ],
+    },
+    twitter: {
+      card: "summary",
+      title: t("title"),
+      description: t("description"),
+      images: ["/me.jpeg"],
     },
     robots: {
       index: true,
